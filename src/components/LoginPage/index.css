@@ -1,0 +1,128 @@
+.main-con {
+  height: 100vh;
+  width: 100vw;
+  background-color: #131313;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+}
+@media screen and (min-width: 768px) {
+  .main-con {
+    background-image: url('https://res.cloudinary.com/dly8bneey/image/upload/v1690194819/jyiv7p6iierbhhclbtzs.png');
+    width: 1440px;
+    height: 1024px;
+  }
+}
+.nav-con {
+  display: flex;
+}
+.Inner-con {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-con {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .Inner-con {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c0b10;
+    width: 456px;
+    height: 440px;
+    border-radius: 8px;
+    opacity: 0.800000011920929px;
+  }
+}
+.con-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.movie-head {
+  width: 100px;
+  height: 27px;
+  padding: 0px 0px 0.000049740076065063477px 0px;
+  color: #e50014;
+  text-align: left;
+  font-family: 'Roboto';
+  font-size: 27px;
+}
+@media screen and (min-width: 768px) {
+  .movie-head {
+    width: 180px;
+    height: 52.0005989074707px;
+    margin-top: 18px;
+    margin-left: 135px;
+    font-size: 45px;
+  }
+}
+.head-f {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+.user-label {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: white;
+  margin-top: 20px;
+}
+.input-field {
+  width: 296px;
+  height: 40px;
+  margin-top: 15px;
+  border-radius: 2px;
+  background: #333333;
+  border-style: none;
+  color: white;
+  font-family: Roboto;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-top: 10x;
+}
+.para {
+  color: #e50014;
+  font-family: 'Roboto';
+  font-size: 14px;
+}
+.btn-login {
+  background: #e50914;
+  width: 296px;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  border-radius: 4px;
+  gap: 10px;
+  font-family: HK Grotesk;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  border-style: none;
+  cursor: none;
+}
