@@ -1,3 +1,6 @@
+.main-con-search {
+  background-color: #131313;
+}
 .container-search {
   display: flex;
   flex-direction: row;

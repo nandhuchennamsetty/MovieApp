@@ -12,7 +12,7 @@ class LoginPage extends Component {
   }
 
   render() {
-    const {showErrorMsg, errorMsg} = this.state
+    // const {showErrorMsg, errorMsg} = this.state
 
     return (
       <MovieContext.Consumer>
@@ -25,11 +25,11 @@ class LoginPage extends Component {
           } = value
 
           const onChangeUsername = event => {
-            triggerChangeUsername(event)
+            triggerChangeUsername(event.target.value)
           }
 
           const onChangeUserPass = event => {
-            triggerChangePassword(event)
+            triggerChangePassword(event.target.value)
           }
 
           const onSuccess = JwtToken => {
@@ -58,7 +58,7 @@ class LoginPage extends Component {
             const response = await fetch(url, options)
             const data = await response.json()
             if (response.ok === true) {
-              this.onSuccess(data.jwt_token)
+              onSuccess(data.jwt_token)
             } else {
               onSubmitFailure(data.error_msg)
             }
@@ -75,10 +75,14 @@ class LoginPage extends Component {
           return (
             <div className="main-con">
               <nav className="nav-con">
-                <h1 className="movie-head">MOVIES</h1>
+                <img
+                  src="https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650191862/Mini%20Project%20Netflix%20Clone/MoviesIcon_snclt2.png"
+                  alt="login website logo"
+                  className="movie-logo"
+                />
               </nav>
               <div className="Inner-con">
-                <form className="form-con" onSubmit={this.submitUserInfo}>
+                <form className="form-con" onSubmit={submitUserInfo}>
                   <h1 className="head-f">Login</h1>
                   <div className="con-inputs">
                     <label htmlFor="username" className="user-label">
@@ -89,7 +93,8 @@ class LoginPage extends Component {
                       className="input-field"
                       id="username"
                       value={username}
-                      onChange={this.onChangeUsername}
+                      onChange={onChangeUsername}
+                      placeholder="Username"
                     />
                   </div>
                   <div className="con-inputs">
@@ -101,10 +106,11 @@ class LoginPage extends Component {
                       className="input-field"
                       id="password"
                       value={password}
-                      onChange={this.onChangeUserPass}
+                      onChange={onChangeUserPass}
+                      placeholder="Password"
                     />
-                    {showErrorMsg && <p className="para">{errorMsg}</p>}
                   </div>
+                  {showErrorMsg && <p className="para">{errorMsg}</p>}
                   <button type="submit" className="btn-login">
                     Login
                   </button>

@@ -5,8 +5,8 @@ import {useState} from 'react'
 import MovieContext from '../../context/MovieContext'
 import './index.css'
 
-const Header = props => {
-  const {SearchFun} = props
+const Header = () => {
+  // const {SearchFun} = props
   const [onClickValue, onSet] = useState(false)
   const search = 'true'
 
@@ -28,8 +28,9 @@ const Header = props => {
         }
 
         const searchButtonClick = () => {
-          SearchFun(enteredVal)
+          // SearchFun(enteredVal)
           triggerSearchChange(enteredVal)
+          console.log(enteredVal)
         }
         return (
           <div className="header-con">
@@ -60,15 +61,17 @@ const Header = props => {
                         onChange={onChangeSearch}
                         className="input-search"
                       />
-                      <button
-                        type="button"
-                        testid="searchButton"
-                        onClick={searchButtonClick}
-                        alt="searchButton"
-                        className="search-ion"
-                      >
-                        <HiOutlineSearch />
-                      </button>
+                      <Link to="/search">
+                        <button
+                          type="button"
+                          testid="searchButton"
+                          onClick={searchButtonClick}
+                          alt="searchButton"
+                          className="search-ion"
+                        >
+                          <HiOutlineSearch />
+                        </button>
+                      </Link>
                     </div>
                   )}
                   {search !== 'true' && (

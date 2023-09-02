@@ -4,13 +4,15 @@ import Footer from '../Footer'
 
 import './index.css'
 
-const Account = props => (
+const Account = () => (
   <MovieContext.Consumer>
     {value => {
       const {username, password, triggerLogout} = value
-
+      console.log(username)
+      console.log(password)
+      console.log('hi')
       const onClickLogout = () => {
-        triggerLogout(props)
+        triggerLogout()
       }
       const hiddenPassword = '*'.repeat(password.length)
 

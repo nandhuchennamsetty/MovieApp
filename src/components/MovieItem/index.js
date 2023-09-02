@@ -51,9 +51,9 @@ class MovieItem extends Component {
     const {params} = match
     const {id} = params
 
-    // const url = `https://apis.ccbp.in/movies-app/movies/${id}`
-    const url =
-      'https://apis.ccbp.in/movies-app/movies/92c2cde7-d740-443d-8929-010b46cb0305'
+    const url = `https://apis.ccbp.in/movies-app/movies/${id}`
+    // const url = 'https://apis.ccbp.in/movies-app/movies/92c2cde7-d740-443d-8929-010b46cb0305'
+
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       method: 'GET',

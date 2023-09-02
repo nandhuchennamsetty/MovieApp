@@ -1,63 +1,62 @@
 import {Component} from 'react'
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import {Switch, Route, Redirect} from 'react-router-dom'
+
+import './App.css'
 
 import SearchElements from './components/SearchElements'
 import Home from './components/Home'
 import LoginPage from './components/LoginPage'
-import PopularItem from './components/PopularItem'
+import Popular from './components/Popular'
 import MovieItemDetails from './components/MovieItemDetails'
 import Account from './components/Account'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import MovieContext from './context/MovieContext'
 
-import './App.css'
-
-/* 
-import TopRated from './components/TopRated'
-import MovieItem from './components/MovieItem'
-import Originals from './components/originals'
-import Trending from './components/Trending'
-import LoaderElement from './components/LoaderElement'
-import Header from './components/Header'
-import Footer from './components/Footer'
-const App = () => <SearchElements />
-/* 
-<TopRated />
- <MovieItemDetails />
-<MovieItem />
-<PopularItem />
-<Account />
-<Trending />
-<LoaderElement />
-<Originals />
- <Home />
- <Footer />
- <Header />
-<LoginPage /> */
-
 class App extends Component {
-  state = {username: '', password: ''}
+  state = {username: '', password: '', searchInput: ''}
+
+  triggerChangeUsername = value => {
+    this.setState({username: value})
+  }
+
+  triggerChangePassword = value => {
+    this.setState({password: value})
+  }
+
+  triggerLogout = () => {
+    const {history} = this.props
+    Cookies.remove('jwt_token')
+    history.replace('/login')
+    this.setState({username: '', password: ''})
+  }
+
+  triggerSearchChange = value => {
+    this.setState({searchInput: value})
+    console.log(value)
+  }
 
   render() {
-    const {username, password} = this.state
+    const {username, password, searchInput} = this.state
 
     return (
       <MovieContext.Provider
         value={{
-          username: '',
-          password: '',
+          username,
+          password,
+          searchInput,
           triggerChangeUsername: this.triggerChangeUsername,
           triggerChangePassword: this.triggerChangePassword,
           triggerLogout: this.triggerLogout,
+          triggerSearchChange: () => {},
         }}
       >
         <Switch>
           <Route exact path="/login" component={LoginPage} />
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/account" component={Account} />
-          <ProtectedRoute exact path="/popular" component={PopularItem} />
+          <ProtectedRoute exact path="/popular" component={Popular} />
           <ProtectedRoute exact path="/search" component={SearchElements} />
           <ProtectedRoute
             exact
@@ -72,4 +71,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)

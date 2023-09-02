@@ -4,15 +4,18 @@
   background-color: #1f1d1d;
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+   margin-right: auto;*/
   padding: 32px;
 }
 @media screen and (min-width: 768px) {
   .main-con {
     background-image: url('https://res.cloudinary.com/dly8bneey/image/upload/v1690194819/jyiv7p6iierbhhclbtzs.png');
-    width: 1440px;
-    height: 1024px;
+    /*width: 1440px;
+    height: 1024px;*/
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
   }
 }
 .nav-con {
@@ -46,29 +49,32 @@
     width: 456px;
     height: 440px;
     border-radius: 8px;
-    opacity: 0.800000011920929px;
+    opacity: 0.8;
   }
 }
 .con-inputs {
   display: flex;
   flex-direction: column;
 }
-.movie-head {
+
+.movie-logo {
   width: 100px;
   height: 27px;
-  padding: 0px 0px 0.000049740076065063477px 0px;
-  color: #e50014;
-  text-align: left;
-  font-family: 'Roboto';
-  font-size: 27px;
+  flex-shrink: 0;
 }
 @media screen and (min-width: 768px) {
-  .movie-head {
+  .movie-logo {
     width: 180px;
-    height: 52.0005989074707px;
-    margin-top: 18px;
-    margin-left: 135px;
-    font-size: 45px;
+    height: 52.001px;
+    flex-shrink: 0;
+    margin-top: 48px;
+    margin-left: 165px;
+  }
+  .con-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-left: 48px;
+    margin-right: 48px;
   }
 }
 .head-f {
@@ -97,16 +103,25 @@
   border-radius: 2px;
   background: #333333;
   border-style: none;
-  color: white;
+  color: #e2e8f0;
   font-family: Roboto;
   font-size: 14px;
   padding-left: 10px;
   padding-top: 10x;
+  outline: none;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .input-field {
+    width: 360px;
+  }
 }
 .para {
   color: #e50014;
   font-family: 'Roboto';
   font-size: 14px;
+  text-align: start;
 }
 .btn-login {
   background: #e50914;
@@ -124,5 +139,15 @@
   color: white;
   margin-top: 40px;
   border-style: none;
-  cursor: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .btn-login {
+    width: 360px;
+  }
+  .para {
+    margin-left: 95px;
+    margin-bottom: 0px;
+    height: 15px;
+  }
 }
