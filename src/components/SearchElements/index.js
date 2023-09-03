@@ -105,9 +105,9 @@ class SearchElements extends Component {
             )
           }
 
-          const renderMovieItem = () => {
+          /*     const renderMovieItem = () => {
             this.getSearchElementVideos()
-          }
+          }     */
 
           const renderFailureView = () => (
             <div className="failure-view-container">

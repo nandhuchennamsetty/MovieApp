@@ -9,7 +9,7 @@ import './index.css'
 
 class Home extends Component {
   state = {
-    data: '',
+    // data: '',
   }
 
   render() {
