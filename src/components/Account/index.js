@@ -3,7 +3,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 
 import './index.css'
-
+// ha
 const Account = () => (
   <MovieContext.Consumer>
     {value => {

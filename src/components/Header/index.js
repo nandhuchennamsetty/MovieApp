@@ -5,6 +5,8 @@ import {useState} from 'react'
 import MovieContext from '../../context/MovieContext'
 import './index.css'
 
+//  ha
+
 const Header = () => {
   // const {SearchFun} = props
   const [onClickValue, onSet] = useState(false)

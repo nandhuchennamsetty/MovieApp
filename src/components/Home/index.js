@@ -7,6 +7,8 @@ import Footer from '../Footer'
 
 import './index.css'
 
+/* ha */
+
 class Home extends Component {
   state = {
     // data: '',

@@ -1,5 +1,5 @@
 import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
-
+//  ha
 import './index.css'
 
 const Footer = () => (
