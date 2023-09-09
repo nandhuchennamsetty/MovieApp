@@ -31,7 +31,7 @@ class SearchElements extends Component {
     const {searchVal} = this.state
 
     const url = `https://apis.ccbp.in/movies-app/movies-search?search=${searchVal}`
-
+    // console.log(searchVal)
     // const url = 'https://apis.ccbp.in/movies-app/movies-search?search=Venom'
     const jwtToken = Cookies.get('jwt_token')
     const options = {
@@ -41,10 +41,10 @@ class SearchElements extends Component {
       },
     }
     const response = await fetch(url, options)
-    console.log(response)
+    // console.log(response)
     if (response.ok) {
       const data = await response.json()
-
+      console.log(data)
       const updatedVideosList = data.results.map(each => ({
         id: each.id,
         backdropPath: each.backdrop_path,
@@ -67,12 +67,17 @@ class SearchElements extends Component {
       <MovieContext.Consumer>
         {value => {
           const {searchInput} = value
-          this.setState({searchVal: searchInput})
-          console.log(searchInput)
+          const {searchVal} = this.state
+          if (searchInput !== searchVal) {
+            this.setState({searchVal: searchInput})
+          }
+
+          console.log(`hi not worry ${searchInput}`)
           const renderLoader = () => <LoadingElement />
 
           const renderSuccessView = () => {
-            const {allSearchResults, searchVal} = this.state
+            /* , searchVal */
+            const {allSearchResults} = this.state
 
             const showSearchResults = allSearchResults.length > 0
 

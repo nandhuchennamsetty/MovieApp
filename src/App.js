@@ -35,12 +35,12 @@ class App extends Component {
 
   triggerSearchChange = value => {
     this.setState({searchInput: value})
-    console.log(value)
+    // console.log(value)
   }
 
   render() {
     const {username, password, searchInput} = this.state
-
+    console.log(searchInput)
     return (
       <MovieContext.Provider
         value={{
@@ -50,7 +50,7 @@ class App extends Component {
           triggerChangeUsername: this.triggerChangeUsername,
           triggerChangePassword: this.triggerChangePassword,
           triggerLogout: this.triggerLogout,
-          triggerSearchChange: () => {},
+          triggerSearchChange: this.triggerSearchChange,
         }}
       >
         <Switch>

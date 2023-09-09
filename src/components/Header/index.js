@@ -32,7 +32,7 @@ const Header = () => {
         const searchButtonClick = () => {
           // SearchFun(enteredVal)
           triggerSearchChange(enteredVal)
-          console.log(enteredVal)
+          // console.log(enteredVal)
         }
         return (
           <div className="header-con">
