@@ -8,8 +8,6 @@ import 'slick-carousel/slick/slick-theme.css'
 import LoaderElement from '../LoaderElement'
 import './index.css'
 
-/* ha */
-
 const inComponentStatus = {
   initial: 'INITIAL',
   inProgress: 'INPROGRESS',

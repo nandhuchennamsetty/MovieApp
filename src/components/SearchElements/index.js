@@ -2,7 +2,6 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Link} from 'react-router-dom'
 
-/* ha */
 import LoadingElement from '../LoaderElement'
 import MovieContext from '../../context/MovieContext'
 import Header from '../Header'

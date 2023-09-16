@@ -1,7 +1,5 @@
 import {Component} from 'react'
 
-/* ha  */
-
 import MovieContext from '../../context/MovieContext'
 import Footer from '../Footer'
 // import LoadingElement from '../LoaderElement'

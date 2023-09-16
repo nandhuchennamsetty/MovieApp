@@ -2,7 +2,6 @@ import {Component} from 'react'
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 //  hello
-//  hello
 import './App.css'
 
 import SearchElements from './components/SearchElements'

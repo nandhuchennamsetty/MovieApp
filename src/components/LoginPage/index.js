@@ -5,8 +5,6 @@ import {Redirect} from 'react-router-dom'
 import MovieContext from '../../context/MovieContext'
 import './index.css'
 
-/* ha */
-
 class LoginPage extends Component {
   state = {
     showErrorMsg: false,

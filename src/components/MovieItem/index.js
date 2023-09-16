@@ -9,8 +9,6 @@ import MovieContext from '../../context/MovieContext'
 
 import './index.css'
 
-/* ha */
-
 const apiConstants = {
   initial: 'INITIAL',
   inProgress: 'INPROGRESS',

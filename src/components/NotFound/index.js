@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom'
 
-/* ha */
 import './index.css'
 
 const NotFound = () => (

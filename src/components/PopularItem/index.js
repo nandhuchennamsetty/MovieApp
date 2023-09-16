@@ -2,8 +2,6 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Link} from 'react-router-dom'
 
-/* ha */
-
 import LoaderElement from '../LoaderElement'
 import './index.css'
 
